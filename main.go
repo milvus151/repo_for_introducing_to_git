@@ -6,13 +6,10 @@ import (
 	"time"
 )
 
-// worker - функция, симулирующая работу
 func worker(id int, wg *sync.WaitGroup) {
-	defer wg.Done() // сигнализируем, что goroutine завершилась
+	defer wg.Done()
 	fmt.Printf("Worker %d starting\n", id)
-
-	time.Sleep(time.Second) // имитация работы
-
+	time.Sleep(time.Second)
 	fmt.Printf("Worker %d done\n", id)
 }
 
